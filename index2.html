@@ -1,0 +1,203 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <script type="text/javascript" charset="utf-8" src="./js/DataTables-1.9.4/media/js/jquery.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./js/DataTables-1.9.4/media/js/jquery.dataTables.js"></script>
+    
+    <title>DIPP Database</title>
+
+    <style type="text/css">
+      @import "./js/DataTables-1.9.4/media/css/demo_page.css";
+      @import "./js/DataTables-1.9.4/media/css/demo_table.css";
+    </style>
+  </head>
+
+  <body id="dt_example">
+    <div id="container">
+      <h1>Disease-specific Imaging Probe Profiling (DIPP) Database</h1>
+
+      <table cellpadding="0" cellspacing="0" border="0" class="display" id="table_id">
+        <thead>
+          <tr>
+            <th>Modality</th>
+            <th>Disease</th>
+            <th>Gene</th>
+            <th>Image probe</th>
+            <th>ROI</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr class="gradeA">
+            <td>PET</td>
+            <td>lung cancer</td>
+            <td>HK1</td>
+            <td class="center">FDG</td>
+            <td class="center">0.3</td>
+          </tr>
+          <tr class="gradeA">
+            <td>PET</td>
+            <td>breast cancer</td>
+            <td>HK2</td>
+            <td class="center">0.5</td>
+            <td class="center">0.3</td>
+          </tr>
+          <tr class="gradeA">
+            <td>XRay</td>
+            <td>lung cancer</td>
+            <td>HK3</td>
+            <td class="center">0.5</td>
+            <td class="center">0.3</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Netscape 7.2</td>
+            <td>Win 95+ / Mac OS 8.6-9.2</td>
+            <td class="center">0.5</td>
+            <td class="center">0.3</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Netscape Browser 8</td>
+            <td>Win 98SE+</td>
+            <td class="center">0.5</td>
+            <td class="center">0.3</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Netscape Navigator 9</td>
+            <td>Win 98+ / OSX.2+</td>
+            <td class="center">1.8</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.0</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.1</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.1</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.2</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.2</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.3</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.3</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.4</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.4</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.5</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.5</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.6</td>
+            <td>Win 95+ / OSX.1+</td>
+            <td class="center">1.6</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.7</td>
+            <td>Win 98+ / OSX.1+</td>
+            <td class="center">1.7</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Mozilla 1.8</td>
+            <td>Win 98+ / OSX.1+</td>
+            <td class="center">1.8</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Seamonkey 1.1</td>
+            <td>Win 98+ / OSX.2+</td>
+            <td class="center">1.8</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Gecko</td>
+            <td>Epiphany 2.20</td>
+            <td>Gnome</td>
+            <td class="center">1.8</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Webkit</td>
+            <td>Safari 1.2</td>
+            <td>OSX.3</td>
+            <td class="center">125.5</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Webkit</td>
+            <td>Safari 1.3</td>
+            <td>OSX.3</td>
+            <td class="center">312.8</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Webkit</td>
+            <td>Safari 2.0</td>
+            <td>OSX.4+</td>
+            <td class="center">419.3</td>
+            <td class="center">A</td>
+          </tr>
+          <tr class="gradeA">
+            <td>Webkit</td>
+            <td>Safari 3.0</td>
+            <td>OSX.4+</td>
+            <td class="center">522.1</td>
+            <td class="center">A</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <th>Modality</th>
+            <th>Disease</th>
+            <th>Gene</th>
+            <th>P value</th>
+            <th>T value</th>
+          </tr>
+        </tfoot>
+      </table>
+
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready( function () {
+          $('#table_id').dataTable({
+            "sScrollX": "100%",
+            "sScrollXInner": "110%",
+            "bScrollCollapse": true
+          });
+      } );
+    </script>
+
+  </body>
+</html>
