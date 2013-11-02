@@ -6,13 +6,13 @@
 	/* Array of database columns which should be read and sent back to DataTables. Use a space where
 	 * you want to insert a non-database field (for example a counter or static image)
 	 */
-	$aColumns = array( 'engine', 'browser', 'platform', 'version', 'grade' );
+	$aColumns = array( 'gene name', 'dataset name', 'sample id', 'probe id', 'disease subclass', 'raw expression level' );
 	
 	/* Indexed column (used for fast and accurate table cardinality) */
-	$sIndexColumn = "id";
+	$sIndexColumn = "gene name";
 	
 	/* DB table to use */
-	$sTable = "ajax";
+	$sTable = "raw_expression_disease";
 	
 	/* Database connection information */
 	$gaSql['user']       = "root";
@@ -42,7 +42,7 @@
 	/* 
 	 * MySQL connection
 	 */
-	if ( ! $gaSql['link'] = mysql_pconnect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
+	if ( ! $gaSql['link'] = mysqli_connect( $gaSql['server'], $gaSql['user'], $gaSql['password']  ) )
 	{
 		fatal_error( 'Could not open connection to server' );
 	}
@@ -128,6 +128,7 @@
 	 * SQL queries
 	 * Get data to display
 	 */
+	/*
 	$sQuery = "
 		SELECT SQL_CALC_FOUND_ROWS `".str_replace(" , ", " ", implode("`, `", $aColumns))."`
 		FROM   $sTable
@@ -135,6 +136,15 @@
 		$sOrder
 		$sLimit
 		";
+	*/
+	$sQuery = "
+		SELECT * `".str_replace(" , ", " ", implode("`, `", $aColumns))."`
+		FROM   $sTable
+		$sWhere
+		$sOrder
+		$sLimit
+		";
+	echo $sQuery;
 	$rResult = mysql_query( $sQuery, $gaSql['link'] ) or fatal_error( 'MySQL Error: ' . mysql_errno() );
 	
 	/* Data set length after filtering */
@@ -170,16 +180,21 @@
 		$row = array();
 		for ( $i=0 ; $i<count($aColumns) ; $i++ )
 		{
-			if ( $aColumns[$i] == "version" )
-			{
+			
+			// Commented by Moss 20131018
+			//if ( $aColumns[$i] == "version" )
+			//{
 				/* Special output formatting for 'version' column */
-				$row[] = ($aRow[ $aColumns[$i] ]=="0") ? '-' : $aRow[ $aColumns[$i] ];
-			}
-			else if ( $aColumns[$i] != ' ' )
-			{
+				//$row[] = ($aRow[ $aColumns[$i] ]=="0") ? '-' : $aRow[ $aColumns[$i] ];
+			//}
+			//else if ( $aColumns[$i] != ' ' )
+			//{
 				/* General output */
-				$row[] = $aRow[ $aColumns[$i] ];
-			}
+				//$row[] = $aRow[ $aColumns[$i] ];
+			//}
+
+			$row[] = $aRow[ $aColumns[$i] ];
+			
 		}
 		$output['aaData'][] = $row;
 	}
